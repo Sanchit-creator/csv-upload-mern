@@ -5,6 +5,6 @@ const upload = require('../middleware/upload')
 
 router.post('/upload-file', upload.single('file'), fileUpload.upload)
 router.get('/get-file', fileUpload.fetch)
-router.get('/file-detail', fileUpload.getFile)
+router.get('/file-detail/:id', fileUpload.getFile)
 
 module.exports = router;

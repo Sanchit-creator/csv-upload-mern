@@ -17,6 +17,9 @@ mongoose.connect(
 ).then(() => console.log('Connected successfully'))
 .catch((err) => {console.log(err)})
 
+
+app.use(cors());
+app.use(express.json())
 app.use('/api', router);
 app.listen(PORT, function() {
     console.log(`App listeng on ${PORT}`);

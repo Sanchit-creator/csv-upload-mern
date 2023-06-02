@@ -28,7 +28,7 @@ module.exports.fetch = async (req, res) => {
 module.exports.getFile = async (req, res) => {
     const fs = require('fs');
     try {
-        const file = await File.findOne({ _id: req.body.id });
+        const file = await File.findOne({ _id: req.params.id });
         const fileData = fs.readFileSync(file.file, { encoding: 'utf8', flag: 'r' });
         res.status(200).json(fileData)
       } catch (error) {
